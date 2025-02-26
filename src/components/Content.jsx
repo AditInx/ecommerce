@@ -2,7 +2,7 @@ function Content() {
   return (
     <>
       <div className="flex justify-between max-w-4xl mx-auto mt-5">
-        <div>
+        <div className="">
           <div className="text-6xl my-8 text-gray-600">
             We are changing <br /> the way people <br />
             shop

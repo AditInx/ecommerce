@@ -1,6 +1,7 @@
 import Content from "../components/Content";
 import Featured from "../components/Featured";
 import Navbar from "../components/Navbar";
+import ProductData from "../utils/ProductData";
 
 function Homepage() {
   return (
@@ -9,6 +10,7 @@ function Homepage() {
         <Navbar />
         <Content/>
         <Featured/>
+        <ProductData/>
       </div>
     </div>
   );
