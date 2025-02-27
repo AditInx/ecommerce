@@ -2,44 +2,32 @@ import { NavLink } from "react-router-dom";
 
 function Navbar() {
   return (
-    <>
-      <nav className="bg-blue-100">
-        <div className="flex justify-around">
-          <NavLink
-            className="bg-blue-600 text-3xl font-bold text-white w-12 h-12 flex items-center justify-center mt-3 rounded-md"
-            to="/"
-          >
-            C
-          </NavLink>
-          <div className="flex justify-between my-3">
+    <nav className="bg-blue-100 shadow-md">
+      <div className="flex justify-between items-center px-8 py-3">
+        <NavLink
+          className="bg-blue-600 text-3xl font-bold text-white w-12 h-12 flex items-center justify-center rounded-md"
+          to="/"
+        >
+          C
+        </NavLink>
+
+        <div className="flex gap-5">
+          {["Home", "About", "Products", "Cart"].map((name) => (
             <NavLink
-              className="text-black  active:bg-black active:text-white hover:bg-gray-400 rounded-md me-5 p-3 "
-              to="/"
+              key={name}
+              to={`/${name === "Home" ? "" : name}`}
+              className={({ isActive }) =>
+                `text-black px-4 py-2 rounded-md transition-all hover:bg-gray-400 ${
+                  isActive ? "bg-black text-white" : ""
+                }`
+              }
             >
-              Home
+              {name}
             </NavLink>
-            <NavLink
-              className="text-black  active:bg-black active:text-white hover:bg-gray-400 rounded-md me-5 p-3"
-              to="/About"
-            >
-              About
-            </NavLink>
-            <NavLink
-              className="text-black  active:bg-black active:text-white hover:bg-gray-400 rounded-md me-5 p-3"
-              to="/Products"
-            >
-              Products
-            </NavLink>
-            <NavLink
-              className="text-black  active:bg-black active:text-white hover:bg-gray-400 rounded-md me-5 p-3"
-              to="/Cart"
-            >
-              Cart
-            </NavLink>
-          </div>
+          ))}
         </div>
-      </nav>
-    </>
+      </div>
+    </nav>
   );
 }
 

@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 
 function useProductData() {
   const [products, setProducts] = useState([]);
-  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -12,14 +11,12 @@ function useProductData() {
         setProducts(json.products);
       } catch (error) {
         console.error("Error fetching products:", error);
-      } finally {
-        setLoading(false);
       }
     };
     fetchData();
   }, []);
 
-  return { products, loading }; 
+  return { products, setProducts }; 
 }
 
 export default useProductData;

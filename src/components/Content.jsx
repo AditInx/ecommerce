@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 function Content() {
   return (
     <>
@@ -12,9 +14,11 @@ function Content() {
             Tempore repellat explicabo enim soluta temporibus <br /> asperiores
             aut obcaecati perferendis porro nobis.
           </p>
-          <button className="text-white bg-blue-600 rounded-md p-3 mt-4 cursor-pointer">
-            OUR PRODUCTS
-          </button>
+          <Link to="/products">
+            <button className="text-white bg-blue-600 rounded-md p-3 mt-4 cursor-pointer">
+              OUR PRODUCTS
+            </button>
+          </Link>
         </div>
 
         <div className="w-[40%] flex gap-3 p-[10px] border-none rounded-2xl bg-black overflow-hidden mt-6">
