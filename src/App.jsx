@@ -5,9 +5,11 @@ import Homepage from './pages/Homepage'
 import Products from './pages/Products'
 import Cart from './pages/Cart'
 import Card from './components/Card'
+import { CartProvider } from './components/CartContext'
 
 function App() {
   return (
+    <CartProvider>
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Homepage />} />
@@ -17,6 +19,7 @@ function App() {
         <Route path='/products/:id' element={<Card/>}/>
       </Routes>
     </BrowserRouter>
+    </CartProvider>
   )
 }
 

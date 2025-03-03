@@ -1,11 +1,21 @@
 import { useParams } from "react-router-dom";
 import Navbar from "./Navbar";
 import useProductData from "../utils/ProductData";
+import { useCart } from "./CartContext";
+
 function Card() {
   const { products } = useProductData();
   const { id } = useParams();
+  const { addItemToCart } = useCart();
+
   const thisProduct = products.find((prod) => prod.id === Number(id));
-  console.log(thisProduct);
+
+  const handleAddToCart = () => {
+    if (thisProduct) {
+      addItemToCart(thisProduct);
+    }
+  };
+
   return (
     <div>
       <Navbar />
@@ -44,7 +54,10 @@ function Card() {
             </select>
           </div>
           <div>
-            <button className="text-gray-300 bg-purple-600 p-3 rounded-xl font-bold cursor-pointer mt-5">
+            <button
+              className="text-gray-300 bg-purple-600 p-3 rounded-xl font-bold cursor-pointer mt-5"
+              onClick={handleAddToCart}
+            >
               ADD TO BAG
             </button>
           </div>
