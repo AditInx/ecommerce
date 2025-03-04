@@ -13,7 +13,7 @@ function Content() {
           perferendis porro nobis.
         </p>
         <Link to="/products">
-          <button className="text-white bg-blue-600 rounded-md px-5 py-3 mt-4">
+          <button className="text-white bg-blue-600 rounded-md px-5 py-3 mt-4 cursor-pointer">
             OUR PRODUCTS
           </button>
         </Link>
